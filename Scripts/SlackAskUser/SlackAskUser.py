@@ -20,3 +20,4 @@ message = '%s - Please reply `%s %s` or `%s %s`' % (demisto.args()['message'],
                                                     option1, entitlementString, option2, entitlementString)
 demisto.results(demisto.executeCommand('slack-send', {'to': demisto.get(demisto.args(), 'user'),
                                                       'message': message, 'IgnoreAddURL': 'true'}))
+
