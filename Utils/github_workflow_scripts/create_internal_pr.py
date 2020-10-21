@@ -35,7 +35,7 @@ def main():
     print(f'{t.cyan}Creation of Internal PR started{t.normal}')
     print(f'{t.cyan}event payload: {payload}{t.normal}')
 
-    org_name = 'demisto'
+    org_name = 'avidan-H'
     repo_name = 'content'
     gh = Github(get_env_var('CONTENTBOT_GH_ADMIN_TOKEN'), verify=False)
     content_repo = gh.get_repo(f'{org_name}/{repo_name}')
@@ -56,8 +56,9 @@ def main():
         pr.add_to_labels(docs_approved_label)
         print(f'{t.cyan}"docs-approved" label added{t.normal}')
     else:
-        pr.add_to_assignees('kirbles19')
-        print(f'{t.cyan}"kirbles19" user assigned{t.normal}')
+        print(f'{t.cyan}"Would normally assign kirbles19" user but he is not a member of this repo...{t.normal}')
+        # pr.add_to_assignees('kirbles19')
+        # print(f'{t.cyan}"kirbles19" user assigned{t.normal}')
 
     merged_by = merged_pr.merged_by.login
     reviewers, _ = merged_pr.get_review_requests()

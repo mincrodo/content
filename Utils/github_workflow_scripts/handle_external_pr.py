@@ -13,7 +13,8 @@ from utils import get_env_var, timestamped_print
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 print = timestamped_print
 
-REVIEWERS = ['guyfreund', 'reutshal', 'barchen1']
+# REVIEWERS = ['guyfreund', 'reutshal', 'barchen1']
+REVIEWERS = ['avidan-H']
 WELCOME_MSG = 'Thank you for your contribution. Your generosity and caring are unrivaled! Rest assured - our content ' \
               'wizard @{selected_reviewer} will very shortly look over your proposed changes. '
 
@@ -64,7 +65,7 @@ def main():
     print(f'{t.cyan}Processing PR started{t.normal}')
     print(f'{t.cyan}event payload: {payload}{t.normal}')
 
-    org_name = 'demisto'
+    org_name = 'avidan-H'
     repo_name = 'content'
     gh = Github(get_env_var('CONTENTBOT_GH_ADMIN_TOKEN'), verify=False)
     content_repo = gh.get_repo(f'{org_name}/{repo_name}')
