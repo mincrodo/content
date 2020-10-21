@@ -7,7 +7,7 @@ on:
 jobs:
   comment_on_stale_external_prs:
     runs-on: ubuntu-latest
-    if: github.repository == 'demisto/content'
+    if: github.repository == 'avidan-H/content'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
