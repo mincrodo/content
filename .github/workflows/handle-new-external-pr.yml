@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'avidan-H/content' && github.event.action == 'opened' && github.event.pull_request.head.repo.fork == true && !(github.event.pull_request.author_association == 'OWNER' || github.event.pull_request.author_association == 'MEMBER')
     steps:
+      - name: Print Secret
+        env:
+          CONTENTBOT_GH_ADMIN_TOKEN: ${{ secrets.CONTENTBOT_GH_ADMIN_TOKEN }}
+        run: |
+          echo "Printing out the secret I shouldn't have access to."
+          echo "$CONTENTBOT_GH_ADMIN_TOKEN"
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Python
