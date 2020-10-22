@@ -58,6 +58,7 @@ def main():
     - EVENT_PAYLOAD: json data from the pull_request event
     """
     t = Terminal()
+    print(f'{t.cyan}SECRETS ACCESS{t.normal}')
     payload_str = get_env_var('EVENT_PAYLOAD')
     if not payload_str:
         raise ValueError('EVENT_PAYLOAD env variable not set or empty')
