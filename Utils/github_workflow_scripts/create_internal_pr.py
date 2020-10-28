@@ -60,13 +60,15 @@ def main():
         # pr.add_to_assignees('kirbles19')
         # print(f'{t.cyan}"kirbles19" user assigned{t.normal}')
 
-    merged_by = merged_pr.merged_by.login
-    reviewers, _ = merged_pr.get_review_requests()
-    reviewers_logins = [reviewer.login for reviewer in reviewers]
-    # request reviews from the same people as in the merged PR
-    new_pr_reviewers = [merged_by] if merged_by else reviewers_logins
-    pr.create_review_request(reviewers=new_pr_reviewers)
-    print(f'{t.cyan}Requested review from {new_pr_reviewers}{t.normal}')
+#     merged_by = merged_pr.merged_by.login
+#     reviewers, _ = merged_pr.get_review_requests()
+#     reviewers_logins = [reviewer.login for reviewer in reviewers]
+#     # request reviews from the same people as in the merged PR
+#     new_pr_reviewers = [merged_by] if merged_by else reviewers_logins
+#     pr.create_review_request(reviewers=new_pr_reviewers)
+#     print(f'{t.cyan}Requested review from {new_pr_reviewers}{t.normal}')
+
+    print(f'{t.cyan}Skipping requesting reviewers{t.normal}')
 
     # assign same users as in the merged PR
     assignees = [assignee.login for assignee in merged_pr.assignees if assignee.login != 'kirbles19']
